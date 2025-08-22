@@ -4,6 +4,7 @@
 
 - `Mask` filter now supports `scaleFactor` parameter, allowing the creation of scaled-down framebuffers. This can save memory in large games, but you must manage scaling logic yourself. Thanks to kimdanielarthur-cowlabs for developing the initial solution.
 - `Camera` has the new property `isObjectInversion`, used internally to support special transforms for filters.
+- `Shader` has the new method `renderImmediate`, which makes it straightforward to use `renderToTexture` when the object is not part of a display list, or otherwise needs updating outside the regular render loop.
 
 ## Improvements
 

@@ -380,7 +380,7 @@ var Shader = new Class({
      * var shader = this.add.shader('myShader', x, y, width, height);
      *
      * var dynamic = this.textures.addDynamicTexture('myTexture', shader.width, shader.height);
-     * 
+     *
      * // To update the texture:
      * dynamic.clear().draw(shader).render();
      * ```
@@ -423,6 +423,22 @@ var Shader = new Class({
 
         // Render at least once, so our texture isn't blank on the first update
         this.renderWebGLStep(renderer, this, this.drawingContext);
+
+        return this;
+    },
+
+    /**
+     * Render the shader immediately.
+     * This is useful for a Shader that is not part of the display list,
+     * but you want to use with `renderToTexture`.
+     *
+     * @method Phaser.GameObjects.Shader#renderImmediate
+     * @since 4.0.0
+     * @return {this} This Shader instance.
+     */
+    renderImmediate: function ()
+    {
+        this.renderWebGLStep(this.scene.renderer, this, this.drawingContext);
 
         return this;
     },
