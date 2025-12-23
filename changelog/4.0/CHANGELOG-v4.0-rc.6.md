@@ -23,3 +23,4 @@
 - `Mask` filter now correctly resizes and clears when the game resizes to an odd width or height, fixing a bug where masks might overdraw themselves over time. Thanks @leemanhopeter!
 - `ParallelFilters` filter memory leak eliminated (this would occur when both passes had active filters).
 - `TilemapGPULayer` now respects camera translation. Thanks @aroman!
+- Fixed a crash in `TweenBuilder` when the targets array contains null or undefined elements (thanks @aomsir)
