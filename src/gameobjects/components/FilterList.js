@@ -16,6 +16,7 @@ var Glow = require('../../filters/Glow');
 var ImageLight = require('../../filters/ImageLight');
 var Key = require('../../filters/Key');
 var Mask = require('../../filters/Mask');
+var PanoramaBlur = require('../../filters/PanoramaBlur');
 var ParallelFilters = null;
 var Pixelate = require('../../filters/Pixelate');
 var Sampler = require('../../filters/Sampler');
@@ -531,6 +532,36 @@ var FilterList = new Class({
             viewTransform,
             scaleFactor
         ));
+    },
+
+    /**
+     * Adds a PanoramaBlur effect.
+     *
+     * PanoramaBlur is a filter for blurring a panorama image.
+     * This is intended for use with filters like ImageLight that use a panorama image as the environment map.
+     * The blur treats a rectangular map as a sphere,
+     * and applies heavy distortion close to the poles to get a correct result.
+     * You should not use it for general purpose blurring.
+     *
+     * The effect can be very slow, as it uses a grid of samples.
+     * Total samples equals samplesX * samplesY. This can get very high,
+     * very quickly, so be careful when increasing these values.
+     * They don't need to be too high for good results.
+     *
+     * By default, the blur is fully diffuse, sampling an entire hemisphere per point.
+     * If you reduce the radius, the effect will be more focused.
+     * Use this to control different levels of glossiness in objects using environment maps.
+     *
+     * @method Phaser.GameObjects.Components.FilterList#addPanoramaBlur
+     * @since 4.0.0
+     *
+     * @param {Phaser.Types.Filters.PanoramaBlurConfig} config - The configuration object for the PanoramaBlur effect.
+     *
+     * @return {Phaser.Filters.PanoramaBlur} The new PanoramaBlur filter controller.
+     */
+    addPanoramaBlur: function (config)
+    {
+        return this.add(new PanoramaBlur(this.camera, config));
     },
 
     /**

@@ -30,6 +30,7 @@ module.exports = {
     FilterImageLightFrag: require('./FilterImageLight-frag.js'),
     FilterKeyFrag: require('./FilterKey-frag.js'),
     FilterMaskFrag: require('./FilterMask-frag.js'),
+    FilterPanoramaBlurFrag: require('./FilterPanoramaBlur-frag.js'),
     FilterPixelateFrag: require('./FilterPixelate-frag.js'),
     FilterShadowFrag: require('./FilterShadow-frag.js'),
     FilterThresholdFrag: require('./FilterThreshold-frag.js'),
