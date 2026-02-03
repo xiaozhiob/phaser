@@ -16,6 +16,7 @@
     - `HARD_LIGHT`
   - FILL mode now treats partial alpha correctly.
   - BitmapText tinting now works correctly.
+- `CombineColorMatrix` filter for remixing alpha and other channels between images.
 - `Key` filter for removing or isolating colors.
 - `ImageLight` filter for image-based lighting, a soft, highly realistic form of illumination.
 - `PanoramaBlur` filter for adjusting images for `ImageLight`.
@@ -25,7 +26,6 @@
 - `TextureManager#addFlatColor` method for creating a flat texture with custom color, alpha, width, and height. This is intended to act as a temporary stand-in for textures you might not have loaded yet.
 - `TextureSource#updateSource` method for switching sources directly.
 - New `Phaser.Types.Textures.TextureSource` and `Phaser.Types.Textures.TextureSourceElement` types to simplify the increasing number of sources for a texture.
-- 
 
 ## Fixes
 
