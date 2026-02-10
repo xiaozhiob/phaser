@@ -233,6 +233,7 @@ export class Parser {
                 {
                     console.log(`${doclet.longname} - Kind: ${doclet.kind}`);
                     console.log(`PARENT WARNING: ${doclet.longname} in ${doclet.meta.filename}@${doclet.meta.lineno} has parent '${doclet.memberof}' that is not defined.`);
+                    continue;
                 }
 
                 if (!(parent as any).kind)
@@ -450,7 +451,7 @@ export class Parser {
         this.setParams(doclet, obj);
 
         if (doclet.returns?.length) {
-            obj.jsDocComment += `\n@returns ${doclet.returns[0].description}`;
+            obj.jsDocComment += `\n@returns ${doclet.returns[0]?.description}`;
         }
 
         this.processGeneric(doclet, obj, obj.parameters);
@@ -529,6 +530,7 @@ export class Parser {
                     console.log(`Docs Error in '${doclet.longname}' in ${doclet.meta.filename}@${doclet.meta.lineno}`);
 
                     console.info(paramDoc);
+                    continue;
                 }
 
                 if (paramDoc.name.indexOf('.') != -1) {

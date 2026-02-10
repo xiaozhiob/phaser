@@ -5,12 +5,13 @@
  */
 
 var Class = require('../../utils/Class');
-var Components = require('../../gameobjects/components');
 var DegToRad = require('../../math/DegToRad');
 var EventEmitter = require('eventemitter3');
 var Events = require('./events');
 var Rectangle = require('../../geom/rectangle/Rectangle');
+var AlphaSingle = require('../../gameobjects/components/AlphaSingle');
 var TransformMatrix = require('../../gameobjects/components/TransformMatrix');
+var Visible = require('../../gameobjects/components/Visible');
 var ValueToColor = require('../../display/color/ValueToColor');
 var Vector2 = require('../../math/Vector2');
 
@@ -61,8 +62,8 @@ var BaseCamera = new Class({
     Extends: EventEmitter,
 
     Mixins: [
-        Components.AlphaSingle,
-        Components.Visible
+        AlphaSingle,
+        Visible
     ],
 
     initialize:

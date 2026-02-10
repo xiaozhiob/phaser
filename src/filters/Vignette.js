@@ -123,6 +123,8 @@ var Vignette = new Class({
     /**
      * Set the color used by the vignette border.
      *
+     * @method Phaser.Filters.Vignette#setColor
+     * @since 4.0.0
      * @param {number | string | Phaser.Types.Display.InputColorObject | Phaser.Display.Color} color - The color to set. Note that a Color object will be copied, not attached.
      * @returns {this} This filter instance.
      */
