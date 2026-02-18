@@ -37,7 +37,7 @@ var GetFastValue = require('../utils/object/GetFastValue');
  *
  * @param {Phaser.GameObjects.GameObject & Phaser.GameObjects.Components.Transform} item - The GameObject to fit to the region. It must have transforms.
  * @param {number} [scaleMode=0] - The scale mode. 0 sets each axis to fill the region independently. -1 scales both axes uniformly so the item touches the _inside_ of the region. 1 scales both axes uniformly so the item touches the _outside_ of the region.
- * @param {Phaser.Geom.Rectangle} [region] - The region to fit. If not defined, it will be inferred from the item's scene scale.
+ * @param {Phaser.Types.Math.RectangleLike} [region] - The region to fit. If not defined, it will be inferred from the item's scene scale.
  * @param {Phaser.Types.Actions.FitToRegionItemCoverage} [itemCoverage] - Override or define the region covered by the item. This is intended to provide dimensions for objects which don't have them, such as Containers, allowing them to resize.
  *
  * @returns {Phaser.GameObjects.GameObject & Phaser.GameObjects.Components.Transform} - The item that was fitted.
