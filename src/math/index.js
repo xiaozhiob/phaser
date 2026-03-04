@@ -42,6 +42,7 @@ var PhaserMath = {
     GetCentroid: require('./GetCentroid'),
     GetSpeed: require('./GetSpeed'),
     GetVec2Bounds: require('./GetVec2Bounds'),
+    Hash: require('./Hash'),
     IsEven: require('./IsEven'),
     IsEvenStrict: require('./IsEvenStrict'),
     Linear: require('./Linear'),

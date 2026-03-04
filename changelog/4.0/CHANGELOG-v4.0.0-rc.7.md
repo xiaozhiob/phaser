@@ -1,4 +1,4 @@
-# Version 4.0.0 - Release Candidate 6
+# Version 4.0.0 - Release Candidate 7
 
 ## New Features
 
@@ -35,6 +35,10 @@
     - `TRIANGULAR`: gradient reverses direction every time it gets to the end or start.
   - Optional Interleaved Gradient Noise based dithering to eliminate banding.
 - `GameObjects.NineSlice` has two new parameters: `tileX`, `tileY`, which allow non-corner regions of the NineSlice to tile instead of stretch. Some stretching is still applied to keep the tile count a whole number. Thanks to @skhoroshavin for this contribution!
+- `GameObjects.Noise` renders noise patterns.
+  - Control value power curve.
+  - Select from trigonometric or PCG algorithms.
+  - Output grayscale, random color, or random normals.
 - Cellular noise objects: `GameObjects.NoiseCell2D`, `NoiseCell3D` and `NoiseCell4D` provide cellular/Worley/Voronoi noise.
   - Render cellular noise with sharp or smooth edges, or random flat colors.
   - Smoothly animate scroll through the XY plane or evolve the pattern through Z or ZW axes.
@@ -68,6 +72,7 @@
 - `Wipe` filter returns from Phaser 3.
   - Now allows you to set the texture displayed in wiped-away regions.
   - Now provides helper functions to set directional reveal/wipe effects.
+- `Math.Hash` provides fast hashes of 1, 2, 3, or 4 dimensional input, using trigonometric or PCG methods.
 - `TextureSource#setSource` method for updating the source of a texture. Note that, while the source will update, derived values such as object sizes will not. It's advisable to switch between textures of identical size to avoid unexpected transforms.
 - `TextureSource#setDataSource` method already existed, but has been changed to be more useful like `setSource`.
 - `TextureManager#addFlatColor` method for creating a flat texture with custom color, alpha, width, and height. This is intended to act as a temporary stand-in for textures you might not have loaded yet.
