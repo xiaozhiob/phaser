@@ -11,7 +11,6 @@
 module.exports = {
 
     MakeAnimLength: require('./MakeAnimLength'),
-    MakeApplyFlatLighting: require('./MakeApplyFlatLighting'),
     MakeApplyLighting: require('./MakeApplyLighting'),
     MakeApplyTint: require('./MakeApplyTint'),
     MakeBoundedSampler: require('./MakeBoundedSampler'),

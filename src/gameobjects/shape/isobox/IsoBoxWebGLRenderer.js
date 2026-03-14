@@ -46,6 +46,8 @@ var IsoBoxWebGLRenderer = function (renderer, src, drawingContext, parentMatrix)
 
     var tint;
 
+    var lighting = src.lighting;
+
     var x0;
     var y0;
 
@@ -76,8 +78,8 @@ var IsoBoxWebGLRenderer = function (renderer, src, drawingContext, parentMatrix)
         x3 = 0;
         y3 = sizeB - height;
 
-        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x0, y0, x1, y1, x2, y2, tint, tint, tint);
-        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x2, y2, x3, y3, x0, y0, tint, tint, tint);
+        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x0, y0, x1, y1, x2, y2, tint, tint, tint, lighting);
+        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x2, y2, x3, y3, x0, y0, tint, tint, tint, lighting);
     }
 
     //  Left Face
@@ -98,8 +100,8 @@ var IsoBoxWebGLRenderer = function (renderer, src, drawingContext, parentMatrix)
         x3 = -sizeA;
         y3 = -height;
 
-        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x0, y0, x1, y1, x2, y2, tint, tint, tint);
-        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x2, y2, x3, y3, x0, y0, tint, tint, tint);
+        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x0, y0, x1, y1, x2, y2, tint, tint, tint, lighting);
+        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x2, y2, x3, y3, x0, y0, tint, tint, tint, lighting);
     }
 
     //  Right Face
@@ -120,8 +122,8 @@ var IsoBoxWebGLRenderer = function (renderer, src, drawingContext, parentMatrix)
         x3 = sizeA;
         y3 = -height;
 
-        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x0, y0, x1, y1, x2, y2, tint, tint, tint);
-        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x2, y2, x3, y3, x0, y0, tint, tint, tint);
+        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x0, y0, x1, y1, x2, y2, tint, tint, tint, lighting);
+        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x2, y2, x3, y3, x0, y0, tint, tint, tint, lighting);
     }
 };
 

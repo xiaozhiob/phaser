@@ -58,7 +58,8 @@ var FillPathWebGL = function (drawingContext, submitter, calcMatrix, src, alpha,
         drawingContext,
         pathIndexes,
         vertices,
-        colors
+        colors,
+        src.lighting
     );
 };
 

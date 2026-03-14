@@ -91,7 +91,9 @@
 
 - Fix `TimeStep#stepLimitFPS` to drop fewer frames, running much more smoothly at the target frame rate. Thanks to @Flow and @Antriel for discussing the topic.
   - Documentation in `FPSConfig#limit` now clarifies that frame limits are only necessary when artificially slowing the game below the display refresh rate.
+- Fix `Shape` not respecting lights even though it had the lighting component.
 - Fix `SpriteGPULayer` creation time handling getting confused by 0.
 - Fix blend modes leaking onto siblings within a `Container`. Thanks to @saintflow47, @tickle-monster and @leemanhopeter for reporting this.
 - Fix texture offsets in `ParseXMLBitmapFont`. Thanks to @leemanhopeter.
+- Fix `DynamicTexture` turning black if it initially has a power-of-two resolution and is resized to a non-power-of-two resolution. Now any WebGL texture resize will wrap with REPEAT if it is power of two, or CLAMP_TO_EDGE if not. Thanks to @x-wk for reporting this.
 - Fix `TextureManager.addUint8Array` method, which got premultiplied alpha wrong and flipY wrong.

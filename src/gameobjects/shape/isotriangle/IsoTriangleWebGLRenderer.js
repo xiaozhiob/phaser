@@ -46,6 +46,8 @@ var IsoTriangleWebGLRenderer = function (renderer, src, drawingContext, parentMa
 
     var alpha = src.alpha;
 
+    var lighting = src.lighting;
+
     var tint;
 
     var x0;
@@ -75,8 +77,8 @@ var IsoTriangleWebGLRenderer = function (renderer, src, drawingContext, parentMa
         var x3 = 0;
         var y3 = sizeB - height;
 
-        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x0, y0, x1, y1, x2, y2, tint, tint, tint);
-        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x2, y2, x3, y3, x0, y0, tint, tint, tint);
+        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x0, y0, x1, y1, x2, y2, tint, tint, tint, lighting);
+        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x2, y2, x3, y3, x0, y0, tint, tint, tint, lighting);
     }
 
     //  Left Face
@@ -108,7 +110,7 @@ var IsoTriangleWebGLRenderer = function (renderer, src, drawingContext, parentMa
             y2 = sizeB - height;
         }
 
-        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x0, y0, x1, y1, x2, y2, tint, tint, tint);
+        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x0, y0, x1, y1, x2, y2, tint, tint, tint, lighting);
     }
 
     //  Right Face
@@ -140,7 +142,7 @@ var IsoTriangleWebGLRenderer = function (renderer, src, drawingContext, parentMa
             y2 = sizeB - height;
         }
 
-        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x0, y0, x1, y1, x2, y2, tint, tint, tint);
+        fillTriNode.run(drawingContext, calcMatrix, submitterNode, x0, y0, x1, y1, x2, y2, tint, tint, tint, lighting);
     }
 };
 

@@ -66,7 +66,9 @@ var StrokePathWebGL = function (drawingContext, submitter, matrix, src, alpha, d
         lineWidth,
         openPath,
         matrix,
-        strokeTintColor, strokeTintColor, strokeTintColor, strokeTintColor
+        strokeTintColor, strokeTintColor, strokeTintColor, strokeTintColor,
+        undefined,
+        src.lighting
     );
 };
 

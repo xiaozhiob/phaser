@@ -60,7 +60,8 @@ var TriangleWebGLRenderer = function (renderer, src, drawingContext, parentMatri
             y3,
             fillTintColor,
             fillTintColor,
-            fillTintColor
+            fillTintColor,
+            src.lighting
         );
     }
 

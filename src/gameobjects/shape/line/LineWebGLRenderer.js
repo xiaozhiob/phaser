@@ -60,7 +60,9 @@ var LineWebGLRenderer = function (renderer, src, drawingContext, parentMatrix)
             1,
             true,
             calcMatrix,
-            color, color, color, color
+            color, color, color, color,
+            undefined,
+            src.lighting
         );
     }
 };

@@ -110,7 +110,8 @@ var GridWebGLRenderer = function (renderer, src, drawingContext, parentMatrix)
                         submitterNode,
                         x * cellWidth + cellPadding, y * cellHeight + cellPadding,
                         cw, ch,
-                        fillTintColor, fillTintColor, fillTintColor, fillTintColor
+                        fillTintColor, fillTintColor, fillTintColor, fillTintColor,
+                        src.lighting
                     );
                 }
             }
