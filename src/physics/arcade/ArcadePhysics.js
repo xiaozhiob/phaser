@@ -91,7 +91,7 @@ var ArcadePhysics = new Class({
         /**
          * Holds the internal collision filter category.
          *
-         * @name Phaser.Physics.Arcade.World#_category
+         * @name Phaser.Physics.Arcade.ArcadePhysics#_category
          * @private
          * @type {number}
          * @since 3.70.0
