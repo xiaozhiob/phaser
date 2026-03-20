@@ -585,7 +585,7 @@ var ColorMatrix = new Class({
      * This preserves RGB, but replaces the alpha with the brightness of the color,
      * inverted.
      *
-     * @method Phaser.Display.ColorMatrix#brightnessToAlpha
+     * @method Phaser.Display.ColorMatrix#brightnessToAlphaInverse
      * @since 4.0.0
      *
      * @param {boolean} [multiply=false] - Multiply the resulting ColorMatrix (`true`), or set it (`false`) ?
