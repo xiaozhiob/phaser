@@ -222,7 +222,7 @@ var Curve = new Class({
     /**
      * Get a list of cumulative segment lengths.
      *
-     * These lengths are
+     * These lengths are calculated and cached the first time this method is called.
      *
      * - [0] 0
      * - [1] The first segment
@@ -498,7 +498,7 @@ var Curve = new Class({
      * @param {number} distance - The distance, in pixels.
      * @param {number} [divisions] - Optional amount of divisions.
      *
-     * @return {number} The distance.
+     * @return {number} The t value (between 0 and 1) at the given distance along the curve.
      */
     getTFromDistance: function (distance, divisions)
     {
