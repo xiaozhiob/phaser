@@ -287,7 +287,7 @@ var SubmitterSpriteGPULayer = new Class({
     /**
      * Fill out the configuration object with default values where needed.
      *
-     * @method Phaser.Renderer.WebGL.RenderNodes.SubmitterSpriteGPULayer#_completeConfig
+     * @method Phaser.Renderer.WebGL.RenderNodes.SubmitterSpriteGPULayer#_completeLayout
      * @since 4.0.0
      * @param {object} config - The configuration object to complete.
      */
