@@ -835,7 +835,7 @@ var PluginManager = new Class({
      * this.load.wad();
      * ```
      *
-     * The callback is what is called when the loader tries to load a file  matching the given key.
+     * The callback is what is called when the loader tries to load a file matching the given key.
      * It's important to understand that the callback is invoked within
      * the context of the LoaderPlugin. In this context there are several properties / methods available
      * to use:
