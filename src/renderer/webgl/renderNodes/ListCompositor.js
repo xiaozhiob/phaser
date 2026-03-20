@@ -32,7 +32,7 @@ var ListCompositor = new Class({
      * This allocates a new DisplayContext if a child's blend mode is different
      * from the previous child. This will start a new batch if one is in progress.
      *
-     * @method Phaser.Renderer.WebGL.RenderNodes.ListCompositor#render
+     * @method Phaser.Renderer.WebGL.RenderNodes.ListCompositor#run
      * @since 4.0.0
      * @param {Phaser.Renderer.WebGL.DrawingContext} displayContext - The context currently in use.
      * @param {Phaser.GameObjects.GameObject[]} children - The list of children to render.
