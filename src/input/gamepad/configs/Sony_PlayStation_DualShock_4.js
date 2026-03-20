@@ -45,7 +45,7 @@ module.exports = {
     LEFT: 14,
 
     /**
-     * D-Pad up
+     * D-Pad right
      *
      * @name Phaser.Input.Gamepad.Configs.DUALSHOCK_4.RIGHT
      * @const
