@@ -199,7 +199,7 @@ var MultiFile = new Class({
      * @method Phaser.Loader.MultiFile#addToMultiFile
      * @since 3.7.0
      *
-     * @param {Phaser.Loader.File} files - The File to add to this MultiFile.
+     * @param {Phaser.Loader.File} file - The File to add to this MultiFile.
      *
      * @return {Phaser.Loader.MultiFile} This MultiFile instance.
      */
