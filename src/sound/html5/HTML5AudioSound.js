@@ -712,7 +712,7 @@ var HTML5AudioSound = new Class({
      * @fires Phaser.Sound.Events#RATE
      * @since 3.3.0
      *
-     * @param {number} value - The playback rate at of this Sound.
+     * @param {number} value - The playback rate of this Sound.
      *
      * @return {this} This Sound instance.
      */
