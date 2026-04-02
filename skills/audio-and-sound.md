@@ -143,7 +143,7 @@ sound.pan = 1;    // full right
 sound.setPan(0.5); // chainable
 ```
 
-Uses `StereoPannerNode` on WebAudio. Does not work on iOS/Safari. On HTML5 Audio, the pan property fires events but has no audible effect.
+Uses `StereoPannerNode`, if it exists, on WebAudio. On HTML5 Audio, the pan property fires events but has no audible effect.
 
 ### Audio Sprites and Markers
 

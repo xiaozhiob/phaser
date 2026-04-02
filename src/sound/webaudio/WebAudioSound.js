@@ -53,7 +53,7 @@ var WebAudioSound = new Class({
          * audio data stored in Phaser.Sound.WebAudioSound#audioBuffer.
          *
          * @name Phaser.Sound.WebAudioSound#source
-         * @type {AudioBufferSourceNode}
+         * @type {?AudioBufferSourceNode}
          * @default null
          * @since 3.0.0
          */
@@ -63,7 +63,7 @@ var WebAudioSound = new Class({
          * A reference to a second audio source used for gapless looped playback.
          *
          * @name Phaser.Sound.WebAudioSound#loopSource
-         * @type {AudioBufferSourceNode}
+         * @type {?AudioBufferSourceNode}
          * @default null
          * @since 3.0.0
          */
@@ -90,10 +90,11 @@ var WebAudioSound = new Class({
         /**
          * Panner node responsible for controlling this sound's pan.
          *
-         * Doesn't work on iOS / Safari.
+         * Only created if the device supports it.
+         * Might not work on iOS / Safari.
          *
          * @name Phaser.Sound.WebAudioSound#pannerNode
-         * @type {StereoPannerNode}
+         * @type {?StereoPannerNode}
          * @since 3.50.0
          */
         this.pannerNode = null;
@@ -102,7 +103,7 @@ var WebAudioSound = new Class({
          * The Stereo Spatial Panner node.
          *
          * @name Phaser.Sound.WebAudioSound#spatialNode
-         * @type {PannerNode}
+         * @type {?PannerNode}
          * @since 3.60.0
          */
         this.spatialNode = null;
@@ -112,7 +113,7 @@ var WebAudioSound = new Class({
          * Game Object, this retains a reference to it.
          *
          * @name Phaser.Sound.WebAudioSound#spatialSource
-         * @type {Phaser.Types.Math.Vector2Like}
+         * @type {?Phaser.Types.Math.Vector2Like}
          * @since 3.60.0
          */
         this.spatialSource = null;
