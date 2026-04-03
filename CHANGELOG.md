@@ -1,12 +1,21 @@
-# Phaser 3 Change Logs
+# Phaser Change Logs
 
-You can find the exhaustive Change Logs for all versions of Phaser 3 here.
+## Phaser 4
 
-Please select a version to read that specific change log:
+| Document | Description |
+| -------- | ----------- |
+| [4.0.0 Changelog](changelog/4.0/CHANGELOG-v4.0.0.md) | Full changelog for Phaser 4.0.0 |
+| [Migration Guide](changelog/4.0/MIGRATION-GUIDE.md) | Guide for upgrading from Phaser 3 to Phaser 4 |
+
+---
+
+## Phaser 3
+
+You can find the exhaustive Change Logs for all versions of Phaser 3 below.
 
 | Version | Name | Release Date |
 | ------- | ---- | ------------ |
-| [3.89](changelog/3.89/CHANGELOG-v3.89.md) | Tsugumi | in dev |
+| [3.90](changelog/3.90/CHANGELOG-v3.90.md) | Tsugumi | 23rd May 2025 |
 | [3.88.2](changelog/3.88.2/CHANGELOG-v3.88.2.md) | Minami | 13th February 2025 |
 | [3.88.1](changelog/3.88.1/CHANGELOG-v3.88.1.md) | Minami | 12th February 2025 |
 | [3.88](changelog/3.88/CHANGELOG-v3.88.md) | Minami | 11th February 2025 |
