@@ -55,7 +55,6 @@ module.exports = [
                 "typeof CANVAS_RENDERER": JSON.stringify(true),
                 "typeof WEBGL_RENDERER": JSON.stringify(true),
                 "typeof WEBGL_DEBUG": JSON.stringify(false),
-                "typeof EXPERIMENTAL": JSON.stringify(false),
                 "typeof FEATURE_SOUND": JSON.stringify(true)
             }),
 
