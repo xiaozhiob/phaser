@@ -130,7 +130,7 @@ var Shake = new Class({
         this._onUpdate;
 
         /**
-         * On Complete callback scope.
+         * The context in which the `_onUpdate` callback is invoked.
          *
          * @name Phaser.Cameras.Scene2D.Effects.Shake#_onUpdateScope
          * @type {any}

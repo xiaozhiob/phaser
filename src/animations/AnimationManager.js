@@ -18,13 +18,19 @@ var Pad = require('../utils/string/Pad');
 
 /**
  * @classdesc
- * The Animation Manager.
+ * The Animation Manager is a global system responsible for defining, storing, and managing all
+ * animations in your Phaser game. It is a singleton owned by the Game instance, meaning it persists
+ * across all Scenes and is not tied to any single Scene's lifecycle.
  *
- * Animations are managed by the global Animation Manager. This is a singleton class that is
- * responsible for creating and delivering animations and their corresponding data to all Game Objects.
- * Unlike plugins it is owned by the Game instance, not the Scene.
+ * You create animations once via `this.anims.create()` (or `this.anims.createFromAseprite()` for
+ * Aseprite exports), and those animations are then available to every Sprite or Game Object that has
+ * an Animation Component, across every Scene.
  *
- * Sprites and other Game Objects get the data they need from the AnimationManager.
+ * The Animation Manager handles frame sequencing, timing, and playback configuration. Individual
+ * Game Objects each maintain their own playback state (current frame, repeat count, etc.) via their
+ * AnimationState component, but the frame data and timing definitions live here.
+ *
+ * You can access the Animation Manager from any Scene via `this.anims`.
  *
  * @class AnimationManager
  * @extends Phaser.Events.EventEmitter
@@ -241,7 +247,7 @@ var AnimationManager = new Class({
     /**
      * Returns the mix delay between two animations.
      *
-     * If no mix has been set-up, this method will return zero.
+     * If no mix has been set up, this method will return zero.
      *
      * If you wish to create, or update, a new mix, call the `addMix` method.
      * If you wish to remove a mix, call the `removeMix` method.
@@ -791,7 +797,9 @@ var AnimationManager = new Class({
     },
 
     /**
-     * Get an Animation.
+     * Retrieves an Animation from the Animation Manager by its key.
+     *
+     * Returns `undefined` if no Animation with the given key exists.
      *
      * @method Phaser.Animations.AnimationManager#get
      * @since 3.0.0
@@ -846,7 +854,9 @@ var AnimationManager = new Class({
     },
 
     /**
-     * Pause all animations.
+     * Pauses all animations in the Animation Manager by setting the `paused` flag to `true`.
+     * This affects all Game Objects that are playing animations globally. Has no effect if
+     * the Animation Manager is already paused.
      *
      * @method Phaser.Animations.AnimationManager#pauseAll
      * @fires Phaser.Animations.Events#PAUSE_ALL
@@ -989,7 +999,8 @@ var AnimationManager = new Class({
     },
 
     /**
-     * Resume all paused animations.
+     * Resumes all paused animations in the Animation Manager by setting the `paused` flag to `false`.
+     * Has no effect if the Animation Manager is not currently paused.
      *
      * @method Phaser.Animations.AnimationManager#resumeAll
      * @fires Phaser.Animations.Events#RESUME_ALL

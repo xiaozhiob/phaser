@@ -7,7 +7,12 @@
 var CONST = require('../const');
 
 /**
- * Called automatically by Phaser.Game and responsible for creating the console.log debug header.
+ * Called automatically by Phaser.Game during initialization to output a styled banner to the browser
+ * console. The banner displays the Phaser version number, the active renderer (WebGL, Canvas, or
+ * Headless), the audio system in use (Web Audio, HTML5 Audio, or No Audio), and optionally the
+ * game title, version, and URL as configured. In browsers that support CSS console styling the
+ * banner is rendered with the colors defined in the Game Config; in IE it falls back to a plain
+ * text log. The banner is skipped entirely when `config.hideBanner` is `true`.
  *
  * You can customize or disable the header via the Game Config object.
  *

@@ -1888,7 +1888,6 @@ var AnimationState = new Class({
      * If you're working with a texture atlas, see the `generateFrameNames` method instead.
      *
      * It's a helper method, designed to make it easier for you to extract frames from sprite sheets.
-     * If you're working with a texture atlas, see the `generateFrameNames` method instead.
      *
      * Example:
      *

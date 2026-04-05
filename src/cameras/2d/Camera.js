@@ -17,7 +17,10 @@ var Vector2 = require('../../math/Vector2');
 
 /**
  * @classdesc
- * A Camera.
+ * A Camera provides a view into your game world and is the primary way scenes are rendered in Phaser.
+ * Every Scene has at least one Camera (the main camera), and you can add additional cameras via the
+ * Camera Manager. Cameras can be scrolled, zoomed, rotated, and fitted with special effects such as
+ * fade, flash, shake, pan, and zoom transitions.
  *
  * The Camera is the way in which all games are rendered in Phaser. They provide a view into your game world,
  * and can be positioned, rotated, zoomed and scrolled accordingly.
@@ -155,7 +158,7 @@ var Camera = new Class({
 
         /**
          * The Camera Zoom effect handler.
-         * To zoom this camera see the `Camera.zoom` method.
+         * To zoom this camera see the `Camera.zoomTo` method.
          *
          * @name Phaser.Cameras.Scene2D.Camera#zoomEffect
          * @type {Phaser.Cameras.Scene2D.Effects.Zoom}
@@ -168,7 +171,7 @@ var Camera = new Class({
          *
          * Can also be set via `setLerp` or as part of the `startFollow` call.
          *
-         * The default values of 1 means the camera will instantly snap to the target coordinates.
+         * The default value of 1 means the camera will instantly snap to the target coordinates.
          * A lower value, such as 0.1 means the camera will more slowly track the target, giving
          * a smooth transition. You can set the horizontal and vertical values independently, and also
          * adjust this value in real-time during your game.
@@ -494,8 +497,8 @@ var Camera = new Class({
      * @param {(string|function)} [ease='Linear'] - The ease to use for the zoom. Can be any of the Phaser Easing constants or a custom function.
      * @param {boolean} [force=false] - Force the zoom effect to start immediately, even if already running.
      * @param {Phaser.Types.Cameras.Scene2D.CameraZoomCallback} [callback] - This callback will be invoked every frame for the duration of the effect.
-     * It is sent four arguments: A reference to the camera, a progress amount between 0 and 1 indicating how complete the effect is,
-     * the current camera scroll x coordinate and the current camera scroll y coordinate.
+     * It is sent three arguments: A reference to the camera, a progress amount between 0 and 1 indicating how complete the effect is,
+     * and the current camera zoom value.
      * @param {any} [context] - The context in which the callback is invoked. Defaults to the Scene to which the Camera belongs.
      *
      * @return {this} This Camera instance.
@@ -678,8 +681,8 @@ var Camera = new Class({
      * @method Phaser.Cameras.Scene2D.Camera#setLerp
      * @since 3.9.0
      *
-     * @param {number} [x=1] - The amount added to the horizontal linear interpolation of the follow target.
-     * @param {number} [y=1] - The amount added to the vertical linear interpolation of the follow target.
+     * @param {number} [x=1] - The horizontal linear interpolation value for the follow target. A value between 0 and 1.
+     * @param {number} [y=1] - The vertical linear interpolation value for the follow target. A value between 0 and 1.
      *
      * @return {this} This Camera instance.
      */

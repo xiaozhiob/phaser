@@ -577,7 +577,7 @@ var BaseCamera = new Class({
     },
 
     /**
-     * Adds the given Game Object to this cameras render list.
+     * Adds the given Game Object to this camera's render list.
      *
      * This is invoked during the rendering stage. Only objects that are actually rendered
      * will appear in the render list.
@@ -1050,7 +1050,7 @@ var BaseCamera = new Class({
      * @method Phaser.Cameras.Scene2D.BaseCamera#setAngle
      * @since 3.0.0
      *
-     * @param {number} [value=0] - The cameras angle of rotation, given in degrees.
+     * @param {number} [value=0] - The camera's angle of rotation, given in degrees.
      *
      * @return {this} This Camera instance.
      */
@@ -1557,8 +1557,8 @@ var BaseCamera = new Class({
     },
 
     /**
-     * Set if this Camera is being used as a Scene Camera, or a Texture
-     * Camera.
+     * Sets whether this Camera is being used as a Scene Camera (the default),
+     * or a Texture Camera used to render to a texture.
      *
      * @method Phaser.Cameras.Scene2D.BaseCamera#setIsSceneCamera
      * @since 3.60.0

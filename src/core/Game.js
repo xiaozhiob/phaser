@@ -697,9 +697,9 @@ var Game = new Class({
      *
      * It will wait until the current frame has completed and then call `runDestroy` internally.
      *
-     * If you need to react to the games eventual destruction, listen for the `DESTROY` event.
+     * If you need to react to the game's eventual destruction, listen for the `DESTROY` event.
      *
-     * If you **do not** need to run Phaser again on the same web page you can set the `noReturn` argument to `true` and it will free-up
+     * If you **do not** need to run Phaser again on the same web page you can set the `noReturn` argument to `true` and it will free up
      * memory being held by the core Phaser plugins. If you do need to create another game instance on the same page, leave this as `false`.
      *
      * @method Phaser.Game#destroy

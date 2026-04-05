@@ -360,7 +360,7 @@ var CameraManager = new Class({
      * @method Phaser.Cameras.Scene2D.CameraManager#getTotal
      * @since 3.11.0
      *
-     * @param {boolean} [isVisible=false] - Set the `true` to only include visible Cameras in the total.
+     * @param {boolean} [isVisible=false] - Set to `true` to only include visible Cameras in the total.
      *
      * @return {number} The total number of Cameras in this Camera Manager.
      */

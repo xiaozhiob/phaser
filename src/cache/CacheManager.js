@@ -13,8 +13,12 @@ var GameEvents = require('../core/events');
  * The Cache Manager is the global cache owned and maintained by the Game instance.
  *
  * Various systems, such as the file Loader, rely on this cache in order to store the files
- * it has loaded. The manager itself doesn't store any files, but instead owns multiple BaseCache
- * instances, one per type of file. You can also add your own custom caches.
+ * they have loaded. The manager itself doesn't store any files, but instead owns multiple BaseCache
+ * instances, one per type of file. Built-in caches are provided for binary files, bitmap fonts,
+ * JSON, physics data, shaders, audio, video, text, HTML, WaveFront OBJ, tilemaps, and XML.
+ * You can also add your own custom caches via the `addCustom` method.
+ *
+ * The Cache Manager is available in any Scene via `this.cache` and is shared across all Scenes.
  *
  * @class CacheManager
  * @memberof Phaser.Cache
@@ -185,7 +189,7 @@ var CacheManager = new Class({
     },
 
     /**
-     * Removes all entries from all BaseCaches and destroys all custom caches.
+     * Destroys all built-in BaseCaches and all custom caches, then nulls their references. Called automatically when the Game instance is destroyed.
      *
      * @method Phaser.Cache.CacheManager#destroy
      * @since 3.0.0

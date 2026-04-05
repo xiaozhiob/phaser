@@ -153,7 +153,7 @@ var BaseCache = new Class({
      * @method Phaser.Cache.BaseCache#getKeys
      * @since 3.17.0
      *
-     * @return {string[]} Array containing all the keys.
+     * @return {string[]} An array of strings containing all keys currently stored in this cache.
      */
     getKeys: function ()
     {
@@ -161,7 +161,8 @@ var BaseCache = new Class({
     },
 
     /**
-     * Destroys this cache and all items within it.
+     * Destroys this cache and all items within it. Clears the entries Map, removes all
+     * event listeners from the EventEmitter, and nulls the internal references.
      *
      * @method Phaser.Cache.BaseCache#destroy
      * @since 3.0.0

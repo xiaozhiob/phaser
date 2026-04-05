@@ -511,7 +511,7 @@ var Config = new Class({
         this.loaderPath = GetValue(config, 'loader.path', '');
 
         /**
-         * @const {number} Phaser.Core.Config#loaderMaxParallelDownloads - Maximum parallel downloads allowed for resources (Default to 32).
+         * @const {number} Phaser.Core.Config#loaderMaxParallelDownloads - The maximum number of files the Loader will attempt to download in parallel. Defaults to 32, or 6 on Android where parallel connections are more constrained.
          */
         this.loaderMaxParallelDownloads = GetValue(config, 'loader.maxParallelDownloads', (Device.os.android) ? 6 : 32);
 
@@ -651,7 +651,7 @@ var Config = new Class({
         this.missingImage = GetValue(config, 'images.missing', pngPrefix + 'CAIAAAD8GO2jAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJ9JREFUeNq01ssOwyAMRFG46v//Mt1ESmgh+DFmE2GPOBARKb2NVjo+17PXLD8a1+pl5+A+wSgFygymWYHBb0FtsKhJDdZlncG2IzJ4ayoMDv20wTmSMzClEgbWYNTAkQ0Z+OJ+A/eWnAaR9+oxCF4Os0H8htsMUp+pwcgBBiMNnAwF8GqIgL2hAzaGFFgZauDPKABmowZ4GL369/0rwACp2yA/ttmvsQAAAABJRU5ErkJggg==');
 
         /**
-         * @const {string} Phaser.Core.Config#whiteImage - A base64 encoded PNG that will be used as the default texture when a texture is assigned that is white or not loaded.
+         * @const {string} Phaser.Core.Config#whiteImage - A base64 encoded PNG used as the default solid white texture. This small 4x4 white image is used internally by Phaser for colored Game Objects and tinting.
          */
         this.whiteImage = GetValue(config, 'images.white', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAIAAAAmkwkpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABdJREFUeNpi/P//PwMMMDEgAdwcgAADAJZuAwXJYZOzAAAAAElFTkSuQmCC');
 

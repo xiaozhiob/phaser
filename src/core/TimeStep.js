@@ -32,7 +32,7 @@ var RequestAnimationFrame = require('../dom/RequestAnimationFrame');
  * @since 3.0.0
  *
  * @param {Phaser.Game} game - A reference to the Phaser.Game instance that owns this Time Step.
- * @param {Phaser.Types.Core.FPSConfig} config
+ * @param {Phaser.Types.Core.FPSConfig} config - The FPS configuration object, as parsed by the Game Config.
  */
 var TimeStep = new Class({
 
@@ -419,7 +419,7 @@ var TimeStep = new Class({
         this.now = 0;
 
         /**
-         * Apply smoothing to the delta value used within Phasers internal calculations?
+         * Apply smoothing to the delta value used within Phaser's internal calculations?
          *
          * This can be changed in the Game Config via the `fps.smoothStep` property. The default is `true`.
          *
@@ -624,7 +624,7 @@ var TimeStep = new Class({
      * will start to throttle the raf callback time. It waits for a while, and then
      * starts to drop the frame rate at 1 frame per second until it's down to just over 1fps.
      * So if the game was running at 60fps, and the player opens a new window, then
-     * after 60 seconds (+ the 'buffer time') it'll be down to 1fps, so rafin'g at 1Hz.
+     * after 60 seconds (+ the 'buffer time') it'll be down to 1fps, firing at just 1Hz.
      *
      * When they make the game visible again, the frame rate is increased at a rate of
      * approx. 8fps, back up to 60fps (or the max it can obtain)
@@ -745,7 +745,8 @@ var TimeStep = new Class({
     },
 
     /**
-     * Manually calls `TimeStep.step`.
+     * Manually advances the TimeStep by one step, using the current timestamp from `window.performance.now`.
+     * Calls `TimeStep.stepLimitFPS` if an FPS limit is active, otherwise calls `TimeStep.step`.
      *
      * @method Phaser.Core.TimeStep#tick
      * @since 3.0.0
