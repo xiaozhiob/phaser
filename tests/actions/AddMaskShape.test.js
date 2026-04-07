@@ -71,14 +71,14 @@ describe('Phaser.Actions.AddMaskShape', function ()
     {
         var result = AddMaskShape(mockTarget, {});
 
-        expect(result).toBe(mockMask);
+        expect(result).toStrictEqual([ mockMask ]);
     });
 
     it('should return a mask when no config is provided', function ()
     {
         var result = AddMaskShape(mockTarget);
 
-        expect(result).toBe(mockMask);
+        expect(result).toStrictEqual([ mockMask ]);
     });
 
     // --- Shape selection ---
