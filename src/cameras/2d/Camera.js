@@ -46,6 +46,11 @@ var Vector2 = require('../../math/Vector2');
  *
  * A Camera also has built-in special effects including Fade, Flash and Camera Shake.
  *
+ * You can apply full-camera filters.
+ * Some filters need off-screen data, such as Blur;
+ * use `camera.getPaddingWrapper()` to get a proxy for working with
+ * cameras with padding applied.
+ *
  * @class Camera
  * @memberof Phaser.Cameras.Scene2D
  * @constructor
@@ -666,6 +671,96 @@ var Camera = new Class({
         {
             return this.matrixCombined;
         }
+    },
+
+    /**
+     * Return a proxy for managing camera padding.
+     *
+     * Camera padding enlarges the camera, adding to each side of the region.
+     * This is useful when you need data from just outside the normal
+     * camera region, e.g. when using a Blur filter.
+     *
+     * Use the proxy in place of the camera.
+     * It conceals the complicated parts, so you can carry on using the camera
+     * just as before.
+     * You can still use the original camera to see the adjusted values.
+     *
+     * Padding affects the following properties on the original camera:
+     *
+     * - Subtracts from `x`, `y`, `scrollX`, `scrollY`.
+     * - Adds double to `width`, height`.
+     *
+     * Padding increases the rendered region, so it can have a performance cost.
+     * If you don't need the extra data at some time, set padding to 0.
+     *
+     * You can't use more than one such proxy at a time. If you try,
+     * they fight and nobody wins.
+     *
+     * @example
+     * // Create a padding proxy with 16 pixels of padding.
+     * var proxy = this.cameras.main.getPaddingWrapper(16);
+     * console.log(proxy.scrollX, this.cameras.main.scrollX); // 0, -16
+     *
+     * // Adjust proxy scroll.
+     * proxy.scrollX += 4;
+     * console.log(proxy.scrollX, this.cameras.main.scrollX); // 4, -12
+     *
+     * @method Phaser.Cameras.Scene2D.Camera#getPaddingWrapper
+     * @since 4.0.0
+     * @param {number} [padding=0] - Initial padding value.
+     * @return {Phaser.Types.Cameras.Scene2D.CameraPaddingWrapper} The proxy for the camera.
+     */
+    getPaddingWrapper: function (padding)
+    {
+        var data = { padding: 0 };
+
+        var handler = {
+            get: function (target, prop)
+            {
+                switch (prop)
+                {
+                    case 'padding': return data.padding;
+                    case 'x':
+                    case 'y':
+                    case 'scrollX':
+                    case 'scrollY': return target[prop] + data.padding;
+                    case 'width':
+                    case 'height': return target[prop] - data.padding * 2;
+                    default: return target[prop];
+                }
+            },
+            set: function (target, prop, value)
+            {
+                switch (prop)
+                {
+                    case 'padding': {
+                        var currentPadding = data.padding;
+                        data.padding = value;
+                        var d = data.padding - currentPadding;
+                        target.x -= d;
+                        target.y -= d;
+                        target.width += d * 2;
+                        target.height += d * 2;
+                        target.scrollX -= d;
+                        target.scrollY -= d;
+                        return padding;
+                    }
+                    case 'x':
+                    case 'y':
+                    case 'scrollX':
+                    case 'scrollY': return target[prop] = value - data.padding;
+                    case 'width':
+                    case 'height': return target[prop] = value + data.padding * 2;
+                    default: return target[prop] = value;
+                }
+            }
+        };
+
+        var proxy = new Proxy(this, handler);
+
+        proxy.padding = padding || 0;
+
+        return proxy;
     },
 
     /**

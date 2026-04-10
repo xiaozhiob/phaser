@@ -17,6 +17,10 @@ var Controller = require('./Controller');
  * offset silhouettes or shapes beneath game objects, characters, or environments. These simulated shadows
  * help to enhance the visual appeal and immersion, making the 2D game world appear more dynamic and three-dimensional.
  *
+ * This effect samples across an area. To avoid missing data at the edges,
+ * use `controller.setPaddingOverride(null)` to automatically pad game objects,
+ * or `camera.getPaddingWrapper(x)` to enlarge a camera.
+ *
  * A Shadow effect is added to a Camera via the FilterList component:
  *
  * ```js

@@ -368,7 +368,7 @@ cm.colorMatrix.contrast(0.3);
 
 7. **CaptureFrame requires forceComposite** -- The camera must have `setForceComposite(true)` or otherwise render into a framebuffer for CaptureFrame to work.
 
-8. **Padding for expanding effects** -- Filters like Blur, Glow, and Shadow automatically calculate padding to expand the render texture. Override with `setPaddingOverride()` if needed. Pass `null` to clear the override.
+8. **Padding for expanding effects** -- Filters like Blur, Glow, and Shadow can automatically calculate padding to expand the render texture. Override with `setPaddingOverride()` if needed. Pass `null` to clear the override. When used on a camera, use `camera.getPaddingWrapper(x)` to render more world outside the image edge.
 
 9. **Controller reuse** -- By default, controllers are destroyed when their FilterList is destroyed. Set `ignoreDestroy = true` to reuse a controller across multiple objects, but you must manage its lifecycle manually. Works best with external filters.
 

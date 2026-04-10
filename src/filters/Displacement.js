@@ -19,6 +19,10 @@ var Controller = require('./Controller');
  * characters, objects, or backgrounds to enhance realism, convey movement, or achieve various
  * stylistic appearances.
  *
+ * This effect samples across an area. To avoid missing data at the edges,
+ * use `controller.setPaddingOverride(null)` to automatically pad game objects,
+ * or `camera.getPaddingWrapper(x)` to enlarge a camera.
+ *
  * A Displacement effect is added to a Camera via the FilterList component:
  *
  * ```js

@@ -18,6 +18,10 @@ var Controller = require('./Controller');
  * smooth blur resembling that of viewing the image through a translucent screen, distinctly different
  * from the bokeh effect produced by an out-of-focus lens or the shadow of an object under usual illumination.
  *
+ * This effect samples across an area. To avoid missing data at the edges,
+ * use `controller.setPaddingOverride(null)` to automatically pad game objects,
+ * or `camera.getPaddingWrapper(x)` to enlarge a camera.
+ *
  * A Blur effect is added to a Camera via the FilterList component:
  *
  * ```js

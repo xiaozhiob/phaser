@@ -22,6 +22,10 @@ var Controller = require('./Controller');
  * effect by blurring everything except a small area of the image. This effect is achieved by blurring the
  * top and bottom elements, while keeping the center area in focus.
  *
+ * This effect samples across an area. To avoid missing data at the edges,
+ * use `controller.setPaddingOverride(null)` to automatically pad game objects,
+ * or `camera.getPaddingWrapper(x)` to enlarge a camera.
+ *
  * A Bokeh effect is added to a Camera via the FilterList component:
  *
  * ```js

@@ -18,6 +18,10 @@ var Controller = require('./Controller');
  * or convey a sense of energy, magic, or otherworldly presence. The effect can also be set on
  * the inside of edges. The color and strength of the glow can be modified.
  *
+ * This effect samples across an area. To avoid missing data at the edges,
+ * use `controller.setPaddingOverride(null)` to automatically pad game objects,
+ * or `camera.getPaddingWrapper(x)` to enlarge a camera.
+ *
  * A Glow effect is added to a Camera via the FilterList component:
  *
  * ```js
