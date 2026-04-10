@@ -9,7 +9,6 @@ src/geom/polygon/Earcut.js
 src/utils/array/StableSort.js
 src/utils/object/Extend.js
 src/structs/RTree.js
-src/layer3d/
 plugins/spine/dist/
 plugins/spine/src/runtimes/
 scripts/
@@ -19,3 +18,4 @@ webpack-nospector.config.js
 webpack.dist.config.js
 webpack.fb.config.js
 webpack.fb.dist.config.js
+build/
